@@ -1,6 +1,6 @@
 import { SignUpForm } from "@/components/auth/signup-form"
 
-const Login = () => {
+const SignUp = () => {
     return (
         <div className="flex h-screen w-full items-center justify-center px-4">
             <SignUpForm />
@@ -8,4 +8,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default SignUp
