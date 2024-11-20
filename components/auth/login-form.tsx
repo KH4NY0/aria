@@ -1,4 +1,9 @@
+"use client";
+
 import Link from "next/link"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
+
 
 import { Button } from "@/components/ui/button"
 import {
@@ -15,9 +20,9 @@ export function LoginForm() {
   return (
     <Card className="mx-auto max-w-sm">
       <CardHeader>
-        <CardTitle className="text-2xl">Login</CardTitle>
+        <CardTitle className="text-2xl">Welcome Back</CardTitle>
         <CardDescription>
-          Enter your email below to login to your account
+          Enter your details below to login to your account
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -43,13 +48,19 @@ export function LoginForm() {
           <Button type="submit" className="w-full">
             Login
           </Button>
-          <Button variant="outline" className="w-full">
-            Login with Google
-          </Button>
+          <div className="flex gap-4">
+            <Button variant="outline" className="w-full" onClick={() => {}}>
+               <FontAwesomeIcon icon={faGoogle} size="2x" />
+            </Button>
+            <Button variant="outline" className="w-full" onClick={() => {}}>
+               <FontAwesomeIcon icon={faGithub} size="2x" />
+            </Button>
+          </div>
+
         </div>
         <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{" "}
-          <Link href="#" className="underline">
+          <Link href="/auth/signup" className="underline">
             Sign up
           </Link>
         </div>
