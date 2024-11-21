@@ -4,6 +4,7 @@ import cylinderImage from "@/assets/cylinder.png";
 import noodleImage from "@/assets/noodle.png";
 import Image from "next/image";
 import {SignupButton} from "@/components/auth/signup-button";
+import React from "react";
 
 export const Hero = () => {
   return (
@@ -31,7 +32,9 @@ export const Hero = () => {
                             </SignupButton>
 
                             <button className="btn btn-text gap-1 transition ease-in-out hover:text-white">
-                                <span>View Source Code</span>
+                                <a  href="https://github.com/KH4NY0/aria.git" target="_blank" rel="noopener noreferrer">
+                                    <span>View Source Code</span>
+                                </a>
                                 <ArrowRight/>
                             </button>
                         </div>

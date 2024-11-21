@@ -25,7 +25,7 @@ const items = [
     },
     {
         title: "Account",
-        url: "/user",
+        url: "/dashboard/account",
         icon: User,
     },
     {
