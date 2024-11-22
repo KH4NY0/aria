@@ -11,7 +11,7 @@ const { auth } = NextAuth(authConfig);
 
 
 
-export default auth(req => {
+export default auth((req, ctx) => {
     const { nextUrl } = req;
     const isLoggedIn = !!req.auth;
 
@@ -21,7 +21,7 @@ export default auth(req => {
 
     // Allow API authentication routes without redirect
     if (isApiAuthRoute) {
-        return null;
+        return; // Use `void` instead of `null`
     }
 
     // Redirect logged-in users away from auth pages
@@ -31,9 +31,9 @@ export default auth(req => {
             if (nextUrl.pathname !== DEFAULT_LOGIN_REDIRECT) {
                 return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, req.url));
             }
-            return null; // No redirect needed if already on the target page
+            return; // No redirect needed if already on the target page
         }
-        return null; // Allow access to auth routes for unauthenticated users
+        return; // Allow access to auth routes for unauthenticated users
     }
 
     // Redirect unauthenticated users away from protected routes
@@ -42,11 +42,11 @@ export default auth(req => {
         if (nextUrl.pathname !== "/auth/signup") {
             return Response.redirect(new URL("/auth/signup", req.url));
         }
-        return null; // Already on the signup page
+        return; // Already on the signup page
     }
 
     // Allow access to all other routes
-    return null;
+    return; // Use `void` instead of `null`
 });
 
 export const config = {
