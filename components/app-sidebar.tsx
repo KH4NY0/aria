@@ -28,11 +28,7 @@ const items = [
         url: "/dashboard/account",
         icon: User,
     },
-    {
-        title: "Settings",
-        url: "#",
-        icon: Settings,
-    },
+
 ]
 
 export function AppSidebar() {
