@@ -58,8 +58,7 @@ export const LoginForm = () => {
           .then((data) => {
 
             setError(data?.error);
-            {/* TODO: Add when we add 2FA */}
-            // setSuccess(data?.success);
+            setSuccess(data?.success);
           })
     });
 
@@ -142,6 +141,7 @@ export const LoginForm = () => {
                     onClick={() => onClick("github")}
                 >
                   <FontAwesomeIcon icon={faGithub} size="2x"/>
+                  <h1>Login with GitHub</h1>
                 </Button>
               </div>
             </div>

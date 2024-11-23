@@ -145,6 +145,7 @@ export const SignUpForm = () => {
                                 onClick={() => onClick("github")}
                             >
                                 <FontAwesomeIcon icon={faGithub} size="2x"/>
+                                <h1>Sign up with GitHub</h1>
                             </Button>
                         </div>
                     </div>
